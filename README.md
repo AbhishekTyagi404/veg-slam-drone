@@ -61,10 +61,13 @@ veg-drone/
 
 ## 📷 Demo
 
-> Autonomous navigation and emergency landing demo (add .gif in `[docs/images/veg_drone_demo.gif](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Veg_FINAL_Flight.gif)`)
+## 🎥 Autonomous Navigation Demo
+
+> Demo of Veg's autonomous SLAM-based navigation and emergency fault-triggered landing  
+> [![View GIF](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Veg_FINAL_Flight.gif)](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Veg_FINAL_Flight.gif)
 
 <div align="center">
-  <img src="docs/images/veg_drone_demo.gif" alt="Veg drone in simulation and real test" width="600">
+  <img src="https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Veg_FINAL_Flight.gif" alt="Veg drone in simulation and real test" width="600">
 </div>
 
 ---
