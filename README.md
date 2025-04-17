@@ -1,7 +1,8 @@
-
 # Surveillance Quadcopter Drone – वेग (Veg)
 
-**वेग** (meaning "speed" in Hindi) is a feature-rich surveillance quadcopter drone developed as a major B.Tech project and later upgraded with advanced autonomy, fault-tolerant control, and real-time computer vision.
+**वेग** (meaning "speed" in Sanskrit) is a feature-rich surveillance quadcopter drone developed as a major B.Tech project and later upgraded with advanced autonomy, fault-tolerant control, and real-time computer vision.
+
+![Veg Drone](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Drone_Final_Pic.jpg)
 
 ## 🚀 Highlights
 
