@@ -64,8 +64,6 @@ veg-drone/
 ## 🎥 Autonomous Navigation Demo
 
 > Demo of Veg's autonomous SLAM-based navigation and emergency fault-triggered landing  
-> [![View GIF](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Veg_FINAL_Flight.gif)]
-
 <div align="center">
   <img src="https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/Veg_FINAL_Flight.gif" alt="Veg drone in simulation and real test" width="600">
 </div>
