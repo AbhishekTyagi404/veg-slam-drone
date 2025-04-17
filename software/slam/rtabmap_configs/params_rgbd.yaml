@@ -1,0 +1,11 @@
+
+RGBD/NeighborLinkRefining: true
+RGBD/OptimizeFromGraphEnd: false
+RGBD/ProximityBySpace: true
+RGBD/ProximityMaxGraphDepth: 50
+RGBD/ProximityPathMaxNeighbors: 5
+RGBD/LocalLoopDetection: true
+Mem/UseOdomFeatures: true
+Mem/ImagePreDecimation: 2
+Vis/MinInliers: 10
+Kp/MaxDepth: 0.0

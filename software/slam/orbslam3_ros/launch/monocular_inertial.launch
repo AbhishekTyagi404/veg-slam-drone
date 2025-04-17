@@ -1,0 +1,14 @@
+
+<launch>
+  <arg name="voc_file" default="$(find orbslam3_ros)/Vocabulary/ORBvoc.txt" />
+  <arg name="config_file" default="$(find orbslam3_ros)/config/EuRoC.yaml" />
+  <arg name="use_viewer" default="true" />
+  
+  <node name="orbslam3_node" pkg="orbslam3_ros" type="mono_inertial" output="screen">
+    <param name="voc_file" value="$(arg voc_file)" />
+    <param name="config_file" value="$(arg config_file)" />
+    <param name="use_viewer" value="$(arg use_viewer)" />
+    <remap from="/camera/image_raw" to="/usb_cam/image_raw" />
+    <remap from="/imu" to="/imu/data" />
+  </node>
+</launch>
