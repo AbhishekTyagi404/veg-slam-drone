@@ -61,4 +61,4 @@ This dataset contains telemetry, mapping, and performance benchmarks from Veg �
 
 ---
 
-Maintained by [Abhishek Tyagi](https://github.com/AbhishekTyagi404) · Part of Kritrim Intelligence Research Logs
+Maintained by [Abhishek Tyagi](https://github.com/AbhishekTyagi404) · Part of [Kritrim Intelligence](https://kritrimintelligence.com) Research Logs
