@@ -1,0 +1,2 @@
+event_time_s,trigger_type,original_target,landing_site,distance_to_landing_site_m,success
+30,motor_failure,"(10, 20)","(5, 12)",7.1,True
