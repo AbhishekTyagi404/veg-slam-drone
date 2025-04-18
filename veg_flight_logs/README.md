@@ -1,63 +1,64 @@
 
 # Veg Drone Flight Logs
 
-This dataset supports the experiments presented in the paper:
-
-### *SLAM-Based Navigation and Fault Resilience in a Surveillance Quadcopter with Embedded Vision Systems*
+This dataset contains telemetry, mapping, and performance benchmarks from Veg — a SLAM-enabled quadcopter with onboard vision and fault resilience.
 
 ---
 
-## 📂 Folder Contents
+## 📂 Flight Log Contents
 
 | File                          | Description                                                                 |
 |-------------------------------|-----------------------------------------------------------------------------|
-| `veg_mission_01.csv`          | Telemetry log with timestamps, GPS, orientation (roll, pitch, yaw), motor PWMs |
-| `veg_mission_01_plot.png`     | SLAM-based trajectory of Veg during autonomous maze navigation [🔗 View Image](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg_flight_logs/veg_mission_01_plot.png) |
-| `slam_trajectory.json`        | ORB-SLAM3 estimated poses with 6-DoF pose history                         |
-| `emergency_landing_stats.csv` | Logs rotor-failure event trigger, deviation from original path, success metrics |
-| `cpu_load_plot.png`           | CPU utilization during full SLAM + vision mission [🔗 View Image](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg_flight_logs/cpu_load_plot.png) |
+| `veg_mission_01.csv`          | Full telemetry log (timestamp, GPS, altitude, orientation, motor PWMs)      |
+| `veg_mission_01_plot.png`     | SLAM-estimated drone trajectory during autonomous navigation                |
+| `slam_trajectory.json`        | ORB-SLAM3 pose log with timestamped 6-DoF motion data                       |
+| `emergency_landing_stats.csv` | Fault-triggered landing log: deviation, landing site, and success status    |
+| `cpu_load_plot.png`           | CPU usage profile during concurrent SLAM and object detection              |
 
 ---
 
-## 📌 Instructions for Use
+## 🔍 Visual Previews
 
-- Clone or download the repository:
-  ```bash
-  git clone https://github.com/AbhishekTyagi404/veg-slam-drone.git
-  cd veg-slam-drone/veg_flight_logs
-  ```
+### 🛰️ SLAM Trajectory Output (`veg_mission_01_plot.png`)
 
-- The `.csv` and `.json` files are ready for parsing with Python, MATLAB, or any analysis tool.
-- `veg_mission_01.csv` columns include:
-  ```
-  [time_s, latitude, longitude, altitude_m, roll_deg, pitch_deg, yaw_deg, motor1_pwm, motor2_pwm, motor3_pwm, motor4_pwm]
-  ```
+![SLAM Trajectory](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg_flight_logs/veg_mission_01_plot.png)
 
-- For visual verification:
-  - Use `veg_mission_01_plot.png` to observe planned vs actual SLAM path.
-  - Use `cpu_load_plot.png` to validate Raspberry Pi 4 performance during simultaneous navigation and onboard inference.
+*Autonomous path reconstruction using ORB-SLAM3 visual-inertial odometry. The plot overlays real-time estimated positions during a maze navigation test.*
 
 ---
 
-## 🔧 Reproducibility
+### 💻 CPU Load During Mission (`cpu_load_plot.png`)
 
-These logs correspond to:
+![CPU Load Plot](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg_flight_logs/cpu_load_plot.png)
 
-- 60-second simulated flight in a grid maze
-- ORB-SLAM3 running on Raspberry Pi 4 in monocular-inertial mode
-- LQR controller active during roll and pitch attitude stabilization
-- Emergency landing triggered by rotor failure at t = 30 s
+*Resource usage graph from Raspberry Pi 4 showing system load while running SLAM, LQR control, and object detection concurrently.*
 
 ---
 
-## 📜 Citation
+## 📘 How to Use
 
-If you use this dataset, please cite the following:
+1. Clone or download the repository:
+   ```bash
+   git clone https://github.com/AbhishekTyagi404/veg-slam-drone.git
+   cd veg-slam-drone/veg_flight_logs
+   ```
 
-```
-Abhishek Tyagi. "SLAM-Based Navigation and Fault Resilience in a Surveillance Quadcopter with Embedded Vision Systems." arXiv, 2025.
-```
+2. Open `veg_mission_01.csv` to analyze raw telemetry:
+   - Includes: timestamp, latitude, longitude, altitude, roll, pitch, yaw, and PWM signals for all four rotors.
+
+3. Use `slam_trajectory.json` to visualize 3D trajectory or validate pose estimation.
+
+4. Parse `emergency_landing_stats.csv` to evaluate deviation from planned trajectory during rotor failure event.
 
 ---
 
-Maintained by [Abhishek Tyagi](https://github.com/AbhishekTyagi404) • Powered by Kritrim Intelligence
+## 🔧 Configuration Notes
+
+- ORB-SLAM3 in Visual-Inertial Monocular Mode
+- LQR used for roll/pitch stabilization, PID for yaw and altitude
+- 60 seconds of simulated indoor maze navigation
+- Rotor failure at 30s with automatic safe landing reroute
+
+---
+
+Maintained by [Abhishek Tyagi](https://github.com/AbhishekTyagi404) · Part of Kritrim Intelligence Research Logs
