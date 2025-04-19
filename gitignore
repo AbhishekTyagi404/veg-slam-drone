@@ -35,6 +35,29 @@ Thumbs.db
 *.jpeg
 *.gif
 
+# MATLAB/Simulink
+*.slxc
+*.mdl
+*.slx.autosave
+*.asv
+*.fig
+*.mat
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Sensor/camera outputs
+*.csv
+*.json
+*.avi
+snapshot_*.*
+logs/
+*.log
+
+# Python virtual environments
+venv/
+.env/
+
 # Misc
 *.bak
 *.swp
