@@ -31,6 +31,16 @@ This repository contains all Simulink model generators, control scripts, and ben
 
 ---
 
+### 🖼️ Visualizations (Plots)
+
+| Image | Description |
+|-------|-------------|
+| `veg_mission_01_plot.png` | Drone trajectory in X-Y space ![XY Path](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg-slam-drone-sim/veg_mission_01_plot.png) |
+| `cpu_load_plot.png` | CPU Load during vision tasks ![CPU Load](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg-slam-drone-sim/cpu_load_plot.png) |
+| `slam_vs_gt_plot.png` | SLAM vs Ground Truth ![SLAM vs GT](https://github.com/AbhishekTyagi404/veg-slam-drone/blob/main/veg-slam-drone-sim/slam_vs_gt_plot.png) |
+
+---
+
 ### 📌 How to Use
 
 1. Open MATLAB.
@@ -48,18 +58,6 @@ This repository contains all Simulink model generators, control scripts, and ben
 
 ---
 
-### 📷 SLAM and Fault Benchmarking (Optional)
-
-| File | Description |
-|------|-------------|
-| `slam_trajectory.json` | SLAM-estimated vs. ground truth trajectory (JSON) |
-| `slam_vs_gt_plot.png` | Visual comparison plot |
-| `veg_mission_01_plot.png` | XY trajectory visualization |
-| `cpu_load_plot.png` | Raspberry Pi CPU usage over 30s |
-
----
-
 **Author**: Abhishek Tyagi  
 **Version**: 2.3  
 **GitHub**: [AbhishekTyagi404](https://github.com/AbhishekTyagi404)
-
