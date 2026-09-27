@@ -1,7 +1,7 @@
 
 %% File: generate_trajectory_follower.m
 % Author: Abhishek Tyagi
-% Version: 2.3
+% Version: 2.4
 % Builds a Simulink model 'trajectory_follower.slx' for Veg using PD-based trajectory controller
 
 modelName = 'trajectory_follower';
@@ -32,20 +32,26 @@ add_line(modelName, 'y/1', 'Ey/2');
 % Convert error to body frame
 add_block('simulink/User-Defined Functions/MATLAB Function', ...
     [modelName '/BodyFrameTransform'], 'Position', [150 90 220 130]);
-set_param([modelName '/BodyFrameTransform'], 'MATLABFcn', ...
-['function [ud, vd] = f(ex, ey, psi)
-' ...
- 'ud =  cos(psi)*ex + sin(psi)*ey;
-' ...
- 'vd = -sin(psi)*ex + cos(psi)*ey;
-' ...
- 'end']);
+% A MATLAB Function block's code lives in a Stateflow chart object; it cannot be
+% set with set_param(...,'MATLABFcn',...). (2.3 also had line breaks inside
+% quoted strings, which is a MATLAB syntax error, so the script never ran.)
+fcnCode = sprintf(['function [ud, vd] = f(ex, ey, psi)\n' ...
+                   'ud =  cos(psi)*ex + sin(psi)*ey;\n' ...
+                   'vd = -sin(psi)*ex + cos(psi)*ey;\n' ...
+                   'end\n']);
+chart = find(sfroot, '-isa', 'Stateflow.EMChart', 'Path', [modelName '/BodyFrameTransform']);
+chart.Script = fcnCode;
 
 add_line(modelName, 'Ex/1', 'BodyFrameTransform/1');
 add_line(modelName, 'Ey/1', 'BodyFrameTransform/2');
 add_line(modelName, 'psi/1', 'BodyFrameTransform/3');
 
-% Compute attitude commands
+% Compute attitude commands (default gains; override in the base workspace before simulating)
+if ~exist('Kp_theta', 'var'), Kp_theta = 0.2; end
+if ~exist('Kp_phi', 'var'),   Kp_phi   = 0.2; end
+assignin('base', 'Kp_theta', Kp_theta);
+assignin('base', 'Kp_phi', Kp_phi);
+
 add_block('simulink/Math Operations/Gain', [modelName '/theta_cmd'], ...
     'Gain', 'Kp_theta', 'Position', [260 90 300 110]);
 add_block('simulink/Math Operations/Gain', [modelName '/phi_cmd'], ...

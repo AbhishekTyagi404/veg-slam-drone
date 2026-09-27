@@ -1,4 +1,3 @@
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -13,6 +12,7 @@ log/
 # Arduino
 *.hex
 *.elf
+firmware/test/test_fc
 
 # System files
 .DS_Store
@@ -22,33 +22,22 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Dataset and models
+# Large models / weights (download separately, see software/vision)
 *.onnx
 *.weights
-*.cfg
 *.pkl
 *.npz
 
-# Images and generated plots
-*.png
-*.jpg
-*.jpeg
-*.gif
-
-# MATLAB/Simulink
+# MATLAB/Simulink autosave & cache (generated .slx and the .mat parameters ARE tracked)
 *.slxc
-*.mdl
 *.slx.autosave
 *.asv
-*.fig
-*.mat
+slprj/
 
 # Jupyter notebooks
 .ipynb_checkpoints/
 
-# Sensor/camera outputs
-*.csv
-*.json
+# Raw recordings (curated logs in veg_flight_logs/ and plots ARE tracked)
 *.avi
 snapshot_*.*
 logs/
